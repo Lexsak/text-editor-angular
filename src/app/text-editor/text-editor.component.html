@@ -22,7 +22,7 @@
     <mat-icon> format_list_numbered</mat-icon>
   </button>
 
-  <button id="insertUnorderedList">
+  <button id="insertUnorderedList" class="option-button">
     <mat-icon> format_list_bulleted</mat-icon>
   </button>
 
@@ -40,7 +40,7 @@
     <mat-icon>link</mat-icon>
   </button>
 
-  <button id="unLink" class="option-button">
+  <button id="unlink" class="option-button">
     <mat-icon>link_off</mat-icon>
   </button>
 
@@ -80,9 +80,13 @@
   </select>
 
   <!-- Font -->
-  <select id="fontName" class="adv-option-button"></select>
+  <select id="fontName" class="adv-option-button" [(ngModel)]="selectedFont">
+     <option *ngFor="let font of fontList" [value]="font">{{ font }}</option>
+  </select>
 
-  <select id="fontSize" class="adv-option-button"></select>
+  <select id="fontSize" class="adv-option-button" [(ngModel)]="selectedFontSize">
+     <option *ngFor="let fontSize of fontSizeOptions" [value]="fontSize">{{ fontSize }}</option>
+  </select>
 
   <!-- Color -->
   <div class="input-wrapper">
