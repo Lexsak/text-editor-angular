@@ -1,13 +1,12 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, ElementRef, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-text-editor',
   templateUrl: './text-editor.component.html',
   styleUrls: ['./text-editor.component.css'],
 })
-export class TextEditorComponent implements OnInit, AfterViewInit {
-  linkButton!: HTMLElement | null;
-  advancedOptionButton!: NodeListOf<Element>;
+export class TextEditorComponent {
+  @ViewChild('createLinkButton') linkButton!: ElementRef;
 
   selectedBackColor: string = '';
   selectedForeColor: string = '';
@@ -35,24 +34,15 @@ export class TextEditorComponent implements OnInit, AfterViewInit {
 
   fontSizeOptions: number[] = Array.from({ length: 7 }, (_, i) => i + 1);
 
-  ngAfterViewInit(): void {
-    // this.initializer();
-  }
-
   createLink() {
     let userLink = prompt('Enter a URL');
     // If the link has http, then pass directly else add https
     if (userLink && /http/i.test(userLink)) {
-      this.modifyText(this.linkButton!.id, false, userLink);
+      this.modifyText('createLink', false, userLink);
     } else if (userLink) {
       userLink = 'http://' + userLink;
-      this.modifyText(this.linkButton!.id, false, userLink);
+      this.modifyText('createLink', false, userLink);
     }
-  }
-
-  ngOnInit() {
-    this.advancedOptionButton = document.querySelectorAll('.adv-option-button');
-    this.linkButton = document.getElementById('createLink');
   }
 
   //main logic
@@ -62,4 +52,5 @@ export class TextEditorComponent implements OnInit, AfterViewInit {
 
     console.log(command, defaultUi, value);
   };
+
 }
