@@ -70,23 +70,25 @@
   </button>
 
   <!-- Headings -->
-  <select id="formatBlock" class="adv-option-button">
+  <select id="formatBlock" class="adv-option-button"  [(ngModel)]="selectedHeading" (ngModelChange)="modifyHeading()">
     <option value="H1">H1</option>
     <option value="H2">H2</option>
     <option value="H3">H3</option>
     <option value="H4">H4</option>
     <option value="H5">H5</option>
     <option value="H6">H6</option>
+    <option value="p">Paragraph</option>
+
   </select>
 
   <!-- Font -->
-  <select id="fontName" class="adv-option-button" [(ngModel)]="selectedFont">
+  <select id="fontName" class="adv-option-button" [(ngModel)]="selectedFont" (ngModelChange)="modifyFont()">
      <option *ngFor="let font of fontList" [value]="font">{{ font }}</option>
   </select>
 
-  <select id="fontSize" class="adv-option-button" [(ngModel)]="selectedFontSize">
-     <option *ngFor="let fontSize of fontSizeOptions" [value]="fontSize">{{ fontSize }}</option>
-  </select>
+  <select id="fontSize" class="adv-option-button" [(ngModel)]="selectedFontSize" (ngModelChange)="modifyFontSize()">
+  <option *ngFor="let fontSize of fontSizeOptions" [value]="fontSize">{{ fontSize }}</option>
+</select>
 
   <!-- Color -->
   <div class="input-wrapper">

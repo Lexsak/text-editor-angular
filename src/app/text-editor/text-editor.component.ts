@@ -25,15 +25,31 @@ export class TextEditorComponent implements OnInit, AfterViewInit {
     'Garamond',
     'Georgia',
     'Courier New',
-    'cursive',
+    'Cursive',
   ];
 
-  selectedFont: string = ''; // Zmienna przechowująca aktualnie wybraną czcionkę
-  selectedFontSize: number = 1; // Domyślny rozmiar czcionki
   fontSizeOptions: number[] = Array.from({ length: 7 }, (_, i) => i + 1);
 
   ngAfterViewInit(): void {
     this.initializer();
+  }
+
+  // Select Heading
+  selectedHeading: string = 'p';
+  modifyHeading() {
+    this.modifyText('formatBlock', false, this.selectedHeading);
+  }
+
+  // Select Font
+  selectedFont: string = '';
+  modifyFont() {
+    this.modifyText('fontName', false, this.selectedFont);
+  }
+
+  // Select FontSize
+  selectedFontSize: number = 1;
+  modifyFontSize() {
+    this.modifyText('fontSize', false, this.selectedFontSize);
   }
 
   ngOnInit() {
@@ -65,15 +81,6 @@ export class TextEditorComponent implements OnInit, AfterViewInit {
     this.optionsButtons.forEach((button) => {
       button.addEventListener('click', () => {
         this.modifyText(button.id, false, null);
-      });
-    });
-
-    //options that require value parameter (e.g colors, fonts)
-    this.advancedOptionButton.forEach((button) => {
-      button.addEventListener('change', () => {
-        if (button instanceof HTMLInputElement) {
-          this.modifyText(button.id, false, button.value);
-        }
       });
     });
 
@@ -134,6 +141,8 @@ export class TextEditorComponent implements OnInit, AfterViewInit {
   modifyText = (command: string, defaultUi: boolean, value: any) => {
     //execCommand executes command on selected text
     document.execCommand(command, defaultUi, value);
+
+    console.log(command, defaultUi, value);
   };
 
   highlighterRemover = (className: NodeListOf<Element>) => {
