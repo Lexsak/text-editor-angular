@@ -1,4 +1,99 @@
 <div class="options">
-    <!-- Text Format -->
-    <button id="#bold" class="option-button format">aaa</button>
+  <!-- Text Format -->
+
+  <button id="bold" class="option-button format">
+    <mat-icon> format_bold</mat-icon>
+  </button>
+
+  <button id="italic" class="option-button format">
+    <mat-icon> format_italic</mat-icon>
+  </button>
+
+  <button id="underline" class="option-button format">
+    <mat-icon> format_underlined</mat-icon>
+  </button>
+
+  <button id="strikethrough" class="option-button format">
+    <mat-icon> strikethrough_s</mat-icon>
+  </button>
+
+  <!-- List -->
+  <button id="insertOrderedList" class="option-button">
+    <mat-icon> format_list_numbered</mat-icon>
+  </button>
+
+  <button id="insertUnorderedList">
+    <mat-icon> format_list_bulleted</mat-icon>
+  </button>
+
+  <!-- Undo/Redo -->
+  <button id="undo" class="option-button">
+    <mat-icon>undo</mat-icon>
+  </button>
+
+  <button id="redo" class="option-button">
+    <mat-icon>redo</mat-icon>
+  </button>
+
+  <!-- Link -->
+  <button id="createLink" class="adv-option-button">
+    <mat-icon>link</mat-icon>
+  </button>
+
+  <button id="unLink" class="option-button">
+    <mat-icon>link_off</mat-icon>
+  </button>
+
+  <!-- Alignment -->
+  <button id="justifyLeft" class="option-button align">
+    <mat-icon> format_align_left</mat-icon>
+  </button>
+
+  <button id="justifyCenter" class="option-button align">
+    <mat-icon> format_align_center</mat-icon>
+  </button>
+
+  <button id="justifyRight" class="option-button align">
+    <mat-icon> format_align_right</mat-icon>
+  </button>
+
+  <button id="justifyFull" class="option-button align">
+    <mat-icon> format_align_justify</mat-icon>
+  </button>
+
+  <button id="indent" class="option-button spacing">
+    <mat-icon> format_indent_increase</mat-icon>
+  </button>
+
+  <button id="outdent" class="option-button spacing">
+    <mat-icon> format_indent_decrease</mat-icon>
+  </button>
+
+  <!-- Headings -->
+  <select id="formatBlock" class="adv-option-button">
+    <option value="H1">H1</option>
+    <option value="H2">H2</option>
+    <option value="H3">H3</option>
+    <option value="H4">H4</option>
+    <option value="H5">H5</option>
+    <option value="H6">H6</option>
+  </select>
+
+  <!-- Font -->
+  <select id="fontName" class="adv-option-button"></select>
+
+  <select id="fontSize" class="adv-option-button"></select>
+
+  <!-- Color -->
+  <div class="input-wrapper">
+    <input type="color" id="foreColor" class="adv-option-button" />
+    <label for="foreColor">Font Color</label>
+  </div>
+
+  <div class="input-wrapper">
+    <input type="color" id="backColor" class="adv-option-button" />
+    <label for="backColor">Highlight Color</label>
+  </div>
 </div>
+
+<div id="text-input" contenteditable="true"></div>
