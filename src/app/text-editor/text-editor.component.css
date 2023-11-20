@@ -33,7 +33,13 @@ button {
   background-color: #ffffff;
   outline: none;
   color: #020929;
+  transition: all .3s ease-in-out;
+  cursor: pointer;
 }
+button:hover{
+ background-color: #e0e9ff;
+}
+
 select {
   padding: 7px;
   border: 1px solid #020929;
@@ -72,6 +78,4 @@ input[type="color"]::-moz-color-swatch {
   padding: 20px;
   height: 50vh;
 }
-.active {
-  background-color: #e0e9ff;
-}
+

@@ -1,76 +1,122 @@
 <div class="options">
   <!-- Text Format -->
 
-  <button id="bold" class="option-button format">
+  <button
+    class="option-button format"
+    (click)="modifyText('bold', false, null)"
+    
+  >
     <mat-icon> format_bold</mat-icon>
   </button>
 
-  <button id="italic" class="option-button format">
+  <button
+    class="option-button format"
+    (click)="modifyText('italic', false, null)"
+    
+  >
     <mat-icon> format_italic</mat-icon>
   </button>
 
-  <button id="underline" class="option-button format">
+  <button
+    class="option-button format"
+    (click)="modifyText('underline', false, null)"
+  >
     <mat-icon> format_underlined</mat-icon>
   </button>
 
-  <button id="strikethrough" class="option-button format">
+  <button
+    class="option-button format"
+    (click)="modifyText('strikethrough', false, null)"
+  >
     <mat-icon> strikethrough_s</mat-icon>
   </button>
 
   <!-- List -->
-  <button id="insertOrderedList" class="option-button">
+  <button
+    class="option-button"
+    (click)="modifyText('insertOrderedList', false, null)"
+  >
     <mat-icon> format_list_numbered</mat-icon>
   </button>
 
-  <button id="insertUnorderedList" class="option-button">
+  <button
+    class="option-button"
+    (click)="modifyText('insertUnorderedList', false, null)"
+  >
     <mat-icon> format_list_bulleted</mat-icon>
   </button>
 
   <!-- Undo/Redo -->
-  <button id="undo" class="option-button">
+  <button class="option-button" (click)="modifyText('undo', false, null)">
     <mat-icon>undo</mat-icon>
   </button>
 
-  <button id="redo" class="option-button">
+  <button class="option-button" (click)="modifyText('redo', false, null)">
     <mat-icon>redo</mat-icon>
   </button>
 
   <!-- Link -->
-  <button id="createLink" class="adv-option-button">
+  <button id="createLink" class="adv-option-button" (click)="createLink()">
     <mat-icon>link</mat-icon>
   </button>
 
-  <button id="unlink" class="option-button">
+  <button
+    id="unlink"
+    class="option-button"
+    (click)="modifyText('unlink', false, null)"
+  >
     <mat-icon>link_off</mat-icon>
   </button>
 
   <!-- Alignment -->
-  <button id="justifyLeft" class="option-button align">
+  <button
+    class="option-button align"
+    (click)="modifyText('justifyLeft', false, null)"
+  >
     <mat-icon> format_align_left</mat-icon>
   </button>
 
-  <button id="justifyCenter" class="option-button align">
+  <button
+    class="option-button align"
+    (click)="modifyText('justifyCenter', false, null)"
+  >
     <mat-icon> format_align_center</mat-icon>
   </button>
 
-  <button id="justifyRight" class="option-button align">
+  <button
+    class="option-button align"
+    (click)="modifyText('justifyRight', false, null)"
+  >
     <mat-icon> format_align_right</mat-icon>
   </button>
 
-  <button id="justifyFull" class="option-button align">
+  <button
+    class="option-button align"
+    (click)="modifyText('justifyFull', false, null)"
+  >
     <mat-icon> format_align_justify</mat-icon>
   </button>
 
-  <button id="indent" class="option-button spacing">
+  <button
+    class="option-button spacing"
+    (click)="modifyText('indent', false, null)"
+  >
     <mat-icon> format_indent_increase</mat-icon>
   </button>
 
-  <button id="outdent" class="option-button spacing">
+  <button
+    class="option-button spacing"
+    (click)="modifyText('outdent', false, null)"
+  >
     <mat-icon> format_indent_decrease</mat-icon>
   </button>
 
   <!-- Headings -->
-  <select id="formatBlock" class="adv-option-button"  [(ngModel)]="selectedHeading" (ngModelChange)="modifyHeading()">
+  <select
+    class="adv-option-button"
+    [(ngModel)]="selectedHeading"
+    (ngModelChange)="modifyText('formatBlock', false, selectedHeading)"
+  >
     <option value="H1">H1</option>
     <option value="H2">H2</option>
     <option value="H3">H3</option>
@@ -78,26 +124,47 @@
     <option value="H5">H5</option>
     <option value="H6">H6</option>
     <option value="p">Paragraph</option>
-
   </select>
 
   <!-- Font -->
-  <select id="fontName" class="adv-option-button" [(ngModel)]="selectedFont" (ngModelChange)="modifyFont()">
-     <option *ngFor="let font of fontList" [value]="font">{{ font }}</option>
+  <select
+    class="adv-option-button"
+    [(ngModel)]="selectedFont"
+    (ngModelChange)="modifyText('fontName', false, selectedFont)"
+  >
+    <option *ngFor="let font of fontList" [value]="font">{{ font }}</option>
   </select>
 
-  <select id="fontSize" class="adv-option-button" [(ngModel)]="selectedFontSize" (ngModelChange)="modifyFontSize()">
-  <option *ngFor="let fontSize of fontSizeOptions" [value]="fontSize">{{ fontSize }}</option>
-</select>
+  <select
+    class="adv-option-button"
+    [(ngModel)]="selectedFontSize"
+    (ngModelChange)="modifyText('fontSize', false, selectedFontSize)"
+  >
+    <option *ngFor="let fontSize of fontSizeOptions" [value]="fontSize">
+      {{ fontSize }}
+    </option>
+  </select>
 
   <!-- Color -->
   <div class="input-wrapper">
-    <input type="color" id="foreColor" class="adv-option-button" />
+    <input
+      type="color"
+      id="foreColor"
+      class="adv-option-button"
+      [(ngModel)]="selectedForeColor"
+      (ngModelChange)="modifyText('foreColor', false, selectedForeColor)"
+    />
     <label for="foreColor">Font Color</label>
   </div>
 
   <div class="input-wrapper">
-    <input type="color" id="backColor" class="adv-option-button" />
+    <input
+      type="color"
+      id="backColor"
+      class="adv-option-button"
+      [(ngModel)]="selectedBackColor"
+      (ngModelChange)="modifyText('backColor', false, selectedBackColor)"
+    />
     <label for="backColor">Highlight Color</label>
   </div>
 </div>
