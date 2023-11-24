@@ -1,27 +1,26 @@
-# TextEditor
+# Angular Text Editor
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.9.
+Angular Text Editor is a simple text editor built using the Angular framework, offering various text formatting functions for a rich editing experience.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Bold**: Make selected text bold to emphasize important content.
+- **Italicize**: Transform text to italics for a unique visual style.
+- **Underline**: Add an underline beneath the text for added emphasis.
+- **Strikethrough**: Cross out text to indicate deletion or change.
+- **Numbered List**: Create an ordered list for organized content.
+- **Bullet List**: Generate an unordered list using bullets.
+- **Undo/Redo**: Navigate backward and forward through editing actions.
+- **Link Management**: Add or remove hyperlinks within the text.
+- **Text Alignment**: Set text alignment to left, right, center, or justify.
+- **Indentation Control**: Apply or reduce indentation in the text.
+- **Header Selection**: Choose different header levels for section headings.
+- **Font Styling**: Customize the font style of the selected text.
+- **Font Size Adjustment**: Modify the size of the text for better readability.
+- **Text Color Change**: Adjust the color of the text to suit your preferences.
+- **Background Color Change**: Set the background color of the text.
+- **Insert Placeholder Text**: Add sample text to experiment with the editor's features.
 
-## Code scaffolding
+## Live Demo
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Check out the live demo https://lexsak.github.io/text-editor-angular/
