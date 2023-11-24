@@ -6,6 +6,8 @@ Angular Text Editor is a simple text editor built using the Angular framework, o
 
 Check out the live demo https://lexsak.github.io/text-editor-angular/
 
+![image](https://github.com/Lexsak/text-editor-angular/assets/143490317/c5299666-6c86-438f-a012-5aa87201ea51)
+
 ## Features
 
 - **Bold**: Make selected text bold to emphasize important content.
